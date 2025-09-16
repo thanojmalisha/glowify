@@ -19,7 +19,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/index.css"/>
-
 </head>
 <body>
 
@@ -50,7 +49,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     </div>
   </div>
 </nav>
-
 <!-- Hero -->
 <section class="hero">
   <div class="hero-content">
@@ -60,8 +58,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     <a href="#features" class="btn">Why Choose Us?</a>
   </div>
 </section>
-
-
 <!-- Products Section -->
 <section id="products" class="container my-5">
   <div class="section-title">
@@ -83,7 +79,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     <?php endforeach; ?>
   </div>
 </section>
-
 <!-- Video Section -->
 <section class="video-section my-5">
   <div class="container text-center">
@@ -97,8 +92,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     </div>
   </div>
 </section>
-
-
 <!-- Features Section -->
 <section id="features" class="container my-5 text-center">
   <div class="section-title">
@@ -128,7 +121,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     </div>
   </div>
 </section>
-
 <!-- Testimonials -->
 <section id="testimonials" class="container my-5">
   <div class="section-title">
@@ -155,7 +147,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     </div>
   </div>
 </section>
-
 <!-- Newsletter -->
 <section class="why-us my-5">
   <div class="container text-center">
@@ -186,7 +177,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     </div>
   </div>
 </section>
-
 <!-- Footer -->
 <footer>
   <div class="container">
@@ -220,10 +210,10 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     <p class="text-center">&copy; <?= date("Y") ?> Glowify. All Rights Reserved.</p>
   </div>
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
