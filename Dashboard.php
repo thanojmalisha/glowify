@@ -71,3 +71,13 @@ if(isset($_GET['action'])){
   <a href="users.php">Users</a>     <!-- linked to users.php -->
   <a href="logout.php">Logout</a>
 </div>
+
+<!-- Main Content -->
+<div class="main">
+  <div class="topbar">
+    <h3>Dashboard</h3>
+    <div>
+      <button id="btnTheme" class="btn btn-secondary btn-sm btn-theme">Toggle Theme</button>
+      <button id="btnAdd" class="btn btn-primary btn-sm">+ Add Product</button>
+    </div>
+  </div>
