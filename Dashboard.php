@@ -107,3 +107,25 @@ if(isset($_GET['action'])){
     </div>
   </div>
 </div>
+
+<!-- Add/Edit Modal -->
+<div class="modal fade" id="productModal" tabindex="-1">
+  <div class="modal-dialog">
+    <form id="productForm" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="product_id" id="product_id">
+        <input name="name" id="name" class="form-control mb-2" placeholder="Name" required>
+        <textarea name="description" id="description" class="form-control mb-2" placeholder="Description"></textarea>
+        <input type="number" step="0.01" name="price" id="price" class="form-control mb-2" placeholder="Price" required>
+        <input type="number" name="stock_quantity" id="stock_quantity" class="form-control mb-2" placeholder="Stock" required>
+        <input type="number" name="category_id" id="category_id" class="form-control mb-2" placeholder="Category ID" required>
+        <input name="image_url" id="image_url" class="form-control mb-2" placeholder="Image URL">
+      </div>
+      <div class="modal-footer"><button type="submit" class="btn btn-primary">Save</button></div>
+    </form>
+  </div>
+</div>
