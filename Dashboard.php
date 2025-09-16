@@ -129,3 +129,26 @@ if(isset($_GET['action'])){
     </form>
   </div>
 </div>
+
+<!-- View Product Modal -->
+<div class="modal fade" id="viewModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Product Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="viewImage" src="" class="img-fluid mb-3" style="max-height:300px;">
+        <h4 id="viewName"></h4>
+        <p id="viewDescription" class="text-muted"></p>
+        <p><strong>Price:</strong> Rs <span id="viewPrice"></span></p>
+        <p><strong>Stock:</strong> <span id="viewStock"></span></p>
+        <p><strong>Category:</strong> <span id="viewCategory" class="badge bg-primary"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
