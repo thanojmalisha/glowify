@@ -95,3 +95,15 @@ if(isset($_GET['action'])){
       <div class="col-md-8"><div class="card p-3 chart-container"><canvas id="stockChart"></canvas></div></div>
       <div class="col-md-4"><div class="card p-3 chart-container"><canvas id="categoryChart"></canvas></div></div>
     </div> 
+
+    <!-- Products Table -->
+    <div class="card p-3">
+      <table class="table table-hover" id="productsTable">
+        <thead>
+          <tr><th>ID</th><th>Image</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="productsBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
