@@ -186,8 +186,44 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     </div>
   </div>
 </section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Glowify</h5>
+        <p>Your trusted brand for beauty & self-care products.</p>
+      </div>
+      <div class="col-md-3">
+        <h5>Quick Links</h5>
+        <a href="#">Home</a>
+        <a href="product.php">Products</a>
+        <a href="#features">Why Us</a>
+      </div>
+      <div class="col-md-3">
+        <h5>Support</h5>
+        <a href="#">FAQ</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="col-md-3 text-center">
+        <h5>Follow Us</h5>
+        <div class="social">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="mt-4" style="border-color:rgba(255,255,255,0.1);">
+    <p class="text-center">&copy; <?= date("Y") ?> Glowify. All Rights Reserved.</p>
+  </div>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
