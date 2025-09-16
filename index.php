@@ -128,7 +128,35 @@ while($row = $res->fetch_assoc()) $products[] = $row;
     </div>
   </div>
 </section>
-  
+
+<!-- Testimonials -->
+<section id="testimonials" class="container my-5">
+  <div class="section-title">
+    <h2>What Our Customers Say</h2>
+  </div>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="testimonial">
+        <p>"Glowify products transformed my skin! Highly recommend."</p>
+        <h6>- Amanda, Colombo</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="testimonial">
+        <p>"Amazing quality and fast delivery. I’m a loyal customer now."</p>
+        <h6>- Nimesh, Kandy</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="testimonial">
+        <p>"Affordable and natural products that actually work."</p>
+        <h6>- Shalini, Galle</h6>
+      </div>
+    </div>
+  </div>
+</section>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
