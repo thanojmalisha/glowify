@@ -81,3 +81,17 @@ if(isset($_GET['action'])){
       <button id="btnAdd" class="btn btn-primary btn-sm">+ Add Product</button>
     </div>
   </div>
+
+ <div class="container-fluid mt-3">
+    <!-- Metric Cards -->
+    <div class="row g-3 mb-3">
+      <div class="col-md-4"><div class="card card-metric"><h6>Total Products</h6><h3 id="totalProducts">0</h3></div></div>
+      <div class="col-md-4"><div class="card card-metric"><h6>Total Stock</h6><h3 id="totalStock">0</h3></div></div>
+      <div class="col-md-4"><div class="card card-metric"><h6>Total Revenue</h6><h3 id="totalRevenue">Rs 0</h3></div></div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="row g-3 mb-3">
+      <div class="col-md-8"><div class="card p-3 chart-container"><canvas id="stockChart"></canvas></div></div>
+      <div class="col-md-4"><div class="card p-3 chart-container"><canvas id="categoryChart"></canvas></div></div>
+    </div> 
