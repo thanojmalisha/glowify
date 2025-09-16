@@ -50,3 +50,24 @@ if(isset($_GET['action'])){
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glowify Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/dashboard.css"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dark">
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h4>Glowify Admin</h4>
+  <a href="dashboard.php">Dashboard</a>
+  <a href="index.php">Home</a>
+  <a href="orders.php">Orders</a>   <!-- linked to orders.php -->
+  <a href="users.php">Users</a>     <!-- linked to users.php -->
+  <a href="logout.php">Logout</a>
+</div>
