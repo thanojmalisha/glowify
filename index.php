@@ -156,7 +156,38 @@ while($row = $res->fetch_assoc()) $products[] = $row;
   </div>
 </section>
 
+<!-- Newsletter -->
+<section class="why-us my-5">
+  <div class="container text-center">
+    <h3 class="mb-4">Why Choose Our Brand? 💎</h3>
+    <div class="row g-4">
+      
+      <div class="col-md-4">
+        <div class="p-4 rounded shadow text-white" style="background: linear-gradient(135deg, #ff6ec7, #d500f9);">
+          <h5>🌱 100% Natural</h5>
+          <p>Made with pure botanical ingredients.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 rounded shadow text-white" style="background: linear-gradient(135deg, #ff6ec7, #d500f9);">
+          <h5>🐰 Cruelty-Free</h5>
+          <p>No animal testing, ever.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 rounded shadow text-white" style="background: linear-gradient(135deg, #ff6ec7, #d500f9)">
+          <h5>✨ Proven Results</h5>
+          <p>Loved by thousands of happy customers.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
