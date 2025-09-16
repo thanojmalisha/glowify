@@ -21,7 +21,6 @@ while($row = $res->fetch_assoc()) $products[] = $row;
 <link rel="stylesheet" href="assets/css/index.css"/>
 </head>
 <body>
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
@@ -213,6 +212,7 @@ while($row = $res->fetch_assoc()) $products[] = $row;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
