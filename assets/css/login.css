@@ -55,3 +55,55 @@ h1{
     font-size:16px;
     transition:.3s;
 }
+.form-group input:focus{background:rgba(255,255,255,.1);}
+.form-group label{
+    position:absolute;
+    top:50%;
+    left:15px;
+    transform:translateY(-50%);
+    pointer-events:none;
+    color:var(--muted);
+    transition:.3s;
+    font-size:16px;
+}
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label{
+    top:-10px;
+    font-size:13px;
+    color:var(--accent);
+}
+.error-msg{color:#ff6b6b;font-size:14px;margin-top:4px;}
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:50px;
+    background:var(--accent);
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:10px;
+}
+.btn:hover{opacity:.9;}
+.links{text-align:center;margin-top:15px;}
+.links button{
+    background:none;
+    border:none;
+    color:var(--accent);
+    cursor:pointer;
+    font-weight:700;
+}
+#signup{display:none;}
+.mode-toggle{
+    position:absolute;
+    top:15px;
+    right:15px;
+    cursor:pointer;
+    font-size:22px;
+    color:var(--accent);
+}
+.light-mode .container{
+    background:rgba(0,0,0,.08);
+}
