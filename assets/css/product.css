@@ -1,0 +1,98 @@
+:root{
+  --primary:#ff69b4;
+  --secondary:#4f46e5;
+  --dark:#0f1720;
+  --light:#fff;
+  --card-bg:rgba(255,255,255,0.07);
+}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#0f1720,#1a1f2b);
+  color:var(--light);
+  margin:0;
+}
+.navbar{
+  background:linear-gradient(90deg,var(--secondary),var(--primary));
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+.navbar-brand{font-weight:700;color:#fff !important;}
+.nav-link{color:#fff !important;font-weight:500;}
+.nav-link:hover{color:#ffea00 !important;}
+.hero-section{
+  background:linear-gradient(135deg,#4f46e5,#ff69b4);
+  padding:80px 0;
+  color:#fff;
+  text-align:center;
+  position:relative;
+}
+.hero-title{
+  font-size:3rem;
+  font-weight:700;
+}
+.hero-sub{font-size:1.2rem;opacity:.9;}
+.hero-image img{
+  max-width:380px;
+  border-radius:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.4);
+}
+.section-title{
+  text-align:center;
+  font-weight:700;
+  font-size:2rem;
+  margin-bottom:40px;
+  background:linear-gradient(90deg,#ff69b4,#4f46e5);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.card{
+  background:var(--card-bg);
+  backdrop-filter:blur(15px);
+  border:none;
+  border-radius:20px;
+  transition:.4s;
+  color:#fff;
+  box-shadow:0 8px 25px rgba(0,0,0,0.35);
+}
+.card:hover{transform:translateY(-8px) scale(1.03);}
+.card-img-top{
+  height:220px;
+  object-fit:cover;
+  border-radius:20px 20px 0 0;
+}
+.card-body{text-align:center;padding:20px;}
+.card-body h5{font-weight:600;font-size:1.2rem;}
+.card-body p{font-size:.9rem;opacity:.8;}
+.price{color:#ffea00;font-weight:700;font-size:1.1rem;}
+.add-cart{
+  margin-top:10px;
+  width:100%;
+  border-radius:12px;
+  background:linear-gradient(90deg,#4f46e5,#ff69b4);
+  border:none;
+  color:#fff;
+  font-weight:600;
+  padding:10px;
+  transition:.3s;
+}
+.add-cart:hover{
+  background:linear-gradient(90deg,#ff69b4,#4f46e5);
+  transform:translateY(-2px);
+}
+input.qty{
+  width:60px;
+  text-align:center;
+  border-radius:10px;
+  border:1px solid #777;
+  margin-right:5px;
+  background:#1f2735;
+  color:#fff;
+}
+footer{
+  background:#111827;
+  padding:20px;
+  text-align:center;
+  font-size:.9rem;
+  color:#ccc;
+  margin-top:50px;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
