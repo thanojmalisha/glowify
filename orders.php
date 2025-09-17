@@ -78,3 +78,33 @@ if(isset($_GET['delete_order'])){
     exit();
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glowify Orders</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/dashboard.css"/>
+<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<style>
+/* Metrics card colors */
+.card-metric-total {background: linear-gradient(135deg,#3b82f6,#60a5fa); color:#fff;}
+.card-metric-pending {background: linear-gradient(135deg,#facc15,#fcd34d); color:#000;}
+.card-metric-delivered {background: linear-gradient(135deg,#10b981,#34d399); color:#fff;}
+.card-metric-revenue {background: linear-gradient(135deg,#6366f1,#4f46e5); color:#fff;}
+
+/* Table UI */
+.card-table {background:#1e1e2f;border-radius:16px;padding:20px;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+.table-hover tbody tr:hover {background:rgba(79,70,229,0.2);}
+.table thead {background:#111827;color:#fff;}
+.table th, .table td {vertical-align:middle;}
+.badge-status {padding:5px 12px;border-radius:12px;font-weight:600;}
+.badge-Pending {background:#facc15;color:#000;}
+.badge-Processing {background:#3b82f6;color:#fff;}
+.badge-Shipped {background:#10b981;color:#fff;}
+.badge-Delivered {background:#22c55e;color:#000;}
+.badge-Cancelled {background:#ef4444;color:#fff;}
+.btn-glass {background:rgba(255,255,255,0.05);color:#fff;border-radius:10px;transition:0.3s;}
+.btn-glass:hover {background:linear-gradient(90deg,#3b82f6,#6366f1);color:#fff;}
+</style>
