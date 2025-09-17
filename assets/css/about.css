@@ -1,0 +1,146 @@
+
+    :root{
+      --primary:#ff4da6;
+      --secondary:#6a5acd;
+      --dark:#0f1720;
+      --light:#ffffff;
+      --gradient:linear-gradient(135deg,#6a5acd,#ff4da6);
+    }
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#fdfbff;
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    /* Navbar */
+    .navbar{
+      background:var(--gradient);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    .navbar-brand{
+      font-weight:800;
+      font-size:1.9rem;
+      color:#fff !important;
+    }
+    .nav-link{
+      color:#fff !important;
+      font-weight:500;
+      margin:0 5px;
+      transition:.3s;
+    }
+    .nav-link:hover{
+      color:#ffea00 !important;
+    }
+
+    /* Hero Section */
+    .about-hero{
+      background:url("../images/background.jpg") center/cover no-repeat;
+      color:#fff;
+      height:60vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+    }
+    .about-hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.6);
+    }
+    .about-hero .hero-content{
+      position:relative;
+      z-index:1;
+   
+    }
+    .about-hero h1{
+      font-size:3.2rem;
+      font-weight:800;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .about-hero p{
+      font-size:1.2rem;
+      margin-top:15px;
+      color:#eee;
+     
+    }
+
+    /* About Content */
+    .about-section{
+      padding:80px 20px;
+    }
+    .about-section h2{
+      font-weight:800;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:25px;
+    }
+    .about-section p{
+      font-size:1.05rem;
+      line-height:1.7;
+      color:#555;
+    }
+
+    /* Stats Section */
+    .stats{
+      background:var(--gradient);
+      color:#fff;
+      padding:70px 20px;
+      text-align:center;
+    }
+    .stats .stat{
+      margin:20px 0;
+    }
+    .stats h3{
+      font-weight:800;
+      font-size:2.4rem;
+    }
+
+    /* Our Team */
+    .team{
+      padding:80px 20px;
+      background:#fafafa;
+    }
+    .team h2{
+      text-align:center;
+      font-weight:800;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:40px;
+    }
+    .team-card{
+      background:#fff;
+      border-radius:20px;
+      padding:25px;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+      text-align:center;
+      transition:.3s;
+    }
+    .team-card img{
+      border-radius:50%;
+      height:120px;
+      width:120px;
+      object-fit:cover;
+      margin-bottom:15px;
+    }
+    .team-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 12px 25px rgba(0,0,0,.15);
+    }
+
+    /* Footer */
+    footer{
+      background:#0f1720;
+      color:#fff;
+      padding:60px 20px;
+    }
+    footer h5{font-weight:700;}
+    footer a{color:#ccc;text-decoration:none;display:block;margin-bottom:8px;}
+    footer a:hover{color:#ffea00;}
