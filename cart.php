@@ -85,7 +85,7 @@ while($row=$res->fetch_assoc()) $cart_items[]=$row;
 
 <div class="summary-box mt-4 d-flex justify-content-between align-items-center">
   <div class="summary-total">Total: Rs <?= number_format($grand,2) ?></div>
-  <a href="checkout.php" class="btn btn-success"><i class="fas fa-credit-card"></i> Proceed to Checkout</a>
+  <button id="checkoutBtn" class="btn btn-success"><i class="fas fa-credit-card"></i> Proceed to Checkout</button>
 </div>
 
 </div>
@@ -144,6 +144,18 @@ document.querySelectorAll('.qty-update').forEach(input=>{
         });
     });
 });
+
+// Checkout button validation
+document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+    let items=document.querySelectorAll('.cart-item');
+    if(items.length===0){
+        alert("Your cart is empty. Please add items before proceeding to checkout.");
+    } else {
+        window.location.href='checkout.php';
+    }
+});
 </script>
 </body>
 </html>
+
+
