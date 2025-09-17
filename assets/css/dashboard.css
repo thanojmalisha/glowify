@@ -1,0 +1,95 @@
+:root{
+  --bg-light:#f8f9fa; --text-light:#212529;
+  --bg-dark:#0f1720; --text-dark:#e6eef8;
+  --card-light:#fff; --card-dark:#1e1e2f;
+}
+body.light{background:var(--bg-light);color:var(--text-light);}
+body.dark{background:var(--bg-dark);color:var(--text-dark);}
+.card.light{background:var(--card-light);color:var(--text-light);}
+.card.dark{background:var(--card-dark);color:var(--text-dark);}
+.thumb{width:50px;height:50px;object-fit:cover;border-radius:6px;}
+.topbar{padding:15px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+.btn-theme{margin-right:10px;}
+.table-hover tbody tr:hover{background:rgba(79,70,229,0.2);}
+.badge-category{background:#4f46e5;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.8rem;}
+.card-metric{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;}
+.chart-container{position:relative;width:100%;height:250px;}
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  background: #1e1e2f;
+  color: #fff;
+  padding: 20px;
+}
+.sidebar h4 {color:#ff69b4;margin-bottom:20px;}
+.sidebar a {
+  display:block;
+  padding:10px;
+  margin:5px 0;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  transition:0.3s;
+}
+.sidebar a:hover {background:#4f46e5;}
+.main {
+  margin-left: 240px;
+  padding: 20px;
+}
+
+/* =========================
+   MODERN POPUP STYLES
+========================= */
+.modal-content {
+  border-radius: 18px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  background: rgba(30, 30, 47, 0.95);
+  backdrop-filter: blur(12px);
+  color: #fff;
+}
+.modal-header {
+  background: linear-gradient(135deg,#4f46e5,#ff69b4);
+  color: #fff;
+  border-bottom: none;
+  padding: 16px 20px;
+}
+.modal-header .modal-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.modal-body {
+  padding: 25px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.modal-footer {
+  border-top: none;
+  padding: 15px 20px;
+  background: rgba(255,255,255,0.05);
+}
+.modal-body img {
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+.modal-content .btn {
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.modal-content .btn-primary {
+  background: linear-gradient(135deg,#4f46e5,#14b8a6);
+  border: none;
+}
+.modal-content .btn-primary:hover {opacity: 0.9;}
+.modal-content .btn-danger {
+  background: linear-gradient(135deg,#ef4444,#f97316);
+  border: none;
+}
+.modal-content .btn-danger:hover {opacity: 0.9;}
