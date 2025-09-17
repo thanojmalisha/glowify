@@ -255,3 +255,31 @@ if(isset($_GET['delete_order'])){
     </form>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#ordersTable').DataTable({ "order":[[4,"desc"]] });
+
+    $('#customerSelect').change(function(){
+        if($(this).val()=='new'){ $('#newCustomerFields').show(); } else { $('#newCustomerFields').hide(); }
+    });
+    $('#addProductBtn').click(function(){
+        var row = $('.product-row:first').clone();
+        row.find('select').val('');
+        row.find('input').val(1);
+        $('#productContainer').append(row);
+    });
+    $(document).on('click','.remove-product',function(){
+        if($('.product-row').length>1){ $(this).closest('.product-row').remove(); }
+    });
+    $('.edit-btn').click(function(){
+        $('#editOrderId').val($(this).data('id'));
+    });
+});
+</script>
+</body>
+</html>
