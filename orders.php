@@ -108,3 +108,150 @@ if(isset($_GET['delete_order'])){
 .btn-glass {background:rgba(255,255,255,0.05);color:#fff;border-radius:10px;transition:0.3s;}
 .btn-glass:hover {background:linear-gradient(90deg,#3b82f6,#6366f1);color:#fff;}
 </style>
+</head>
+<body class="dark">
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h4>Glowify Admin</h4>
+  <a href="dashboard.php">Dashboard</a>
+  <a href="index.php">Home</a>
+  <a href="orders.php">Orders</a>
+  <a href="users.php">Users</a>
+  <a href="logout.php">Logout</a>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+  <div class="topbar">
+    <h3>Orders Management</h3>
+    <div>
+      <button id="btnTheme" class="btn btn-secondary btn-sm btn-theme">Toggle Theme</button>
+      <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addOrderModal">+ Add Order</button>
+    </div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="row g-3 mb-3">
+    <div class="col-md-3"><div class="card card-metric card-metric-total text-center">
+      <h6>Total Orders</h6>
+      <h3><?php $r=$conn->query("SELECT COUNT(*) AS cnt FROM `Order`"); echo $r->fetch_assoc()['cnt'];?></h3>
+    </div></div>
+    <div class="col-md-3"><div class="card card-metric card-metric-pending text-center">
+      <h6>Pending</h6>
+      <h3><?php $r=$conn->query("SELECT COUNT(*) AS cnt FROM `Order` WHERE status='Pending'"); echo $r->fetch_assoc()['cnt'];?></h3>
+    </div></div>
+    <div class="col-md-3"><div class="card card-metric card-metric-delivered text-center">
+      <h6>Delivered</h6>
+      <h3><?php $r=$conn->query("SELECT COUNT(*) AS cnt FROM `Order` WHERE status='Delivered'"); echo $r->fetch_assoc()['cnt'];?></h3>
+    </div></div>
+    <div class="col-md-3"><div class="card card-metric card-metric-revenue text-center">
+      <h6>Total Revenue</h6>
+      <h3>Rs <?php $r=$conn->query("SELECT SUM(total_amount) AS sum FROM `Order`"); echo number_format($r->fetch_assoc()['sum'],2);?></h3>
+    </div></div>
+  </div>
+
+  <!-- Orders Table -->
+  <div class="card-table">
+    <table class="table table-hover table-borderless text-light" id="ordersTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>Customer</th><th>Email</th><th>Phone</th><th>Date</th>
+          <th>Products</th><th>Total</th><th>Status</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php
+      $sql="SELECT o.order_id,o.customer_id,o.order_date,o.total_amount,o.status,c.full_name,c.email,c.phone
+            FROM `Order` o LEFT JOIN Customer c ON o.customer_id=c.customer_id ORDER BY o.order_date DESC";
+      $res=$conn->query($sql);
+      while($order=$res->fetch_assoc()){
+          $prod_res = $conn->query("SELECT p.name,oi.quantity,oi.price FROM order_item oi JOIN Product p ON oi.product_id=p.product_id WHERE oi.order_id=".$order['order_id']);
+          $prod_list = "";
+          while($p=$prod_res->fetch_assoc()){
+              $prod_list .= $p['name']." x".$p['quantity']." (Rs ".$p['price'].")<br>";
+          }
+          echo "<tr>
+                  <td>{$order['order_id']}</td>
+                  <td>{$order['full_name']}</td>
+                  <td>{$order['email']}</td>
+                  <td>{$order['phone']}</td>
+                  <td>".date('d M Y, H:i',strtotime($order['order_date']))."</td>
+                  <td>{$prod_list}</td>
+                  <td>Rs ".number_format($order['total_amount'],2)."</td>
+                  <td><span class='badge-status badge-{$order['status']}'>{$order['status']}</span></td>
+                  <td>
+                    <button class='btn btn-sm btn-warning edit-btn' data-id='{$order['order_id']}' data-bs-toggle='modal' data-bs-target='#editOrderModal'>Edit</button>
+                    <a href='?delete_order={$order['order_id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Delete this order?')\">Delete</a>
+                  </td>
+                </tr>";
+      }
+      ?>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Add Order Modal -->
+<div class="modal fade" id="addOrderModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <form method="POST" class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Add Order</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <div class="mb-3"><label>Customer</label>
+          <select name="customer_id" class="form-select" id="customerSelect" required>
+            <option value="">Select Customer</option>
+            <?php $cus=$conn->query("SELECT customer_id,full_name FROM Customer");
+            while($c=$cus->fetch_assoc()){ echo "<option value='{$c['customer_id']}'>{$c['full_name']}</option>"; } ?>
+            <option value="new">-- Add New Customer --</option>
+          </select>
+        </div>
+        <div id="newCustomerFields" style="display:none;">
+            <input type="text" name="full_name" class="form-control mb-2" placeholder="Full Name">
+            <input type="email" name="email" class="form-control mb-2" placeholder="Email">
+            <input type="text" name="phone" class="form-control mb-2" placeholder="Phone">
+        </div>
+        <div id="productContainer">
+          <label>Products</label>
+          <div class="row mb-2 product-row">
+            <div class="col-md-6">
+              <select name="product_id[]" class="form-select" required>
+                <option value="">Select Product</option>
+                <?php $prods=$conn->query("SELECT product_id,name,price FROM Product");
+                while($p=$prods->fetch_assoc()){ 
+                    echo "<option value='{$p['product_id']}'>{$p['name']} (Rs {$p['price']})</option>"; 
+                } ?>
+              </select>
+            </div>
+            <div class="col-md-3"><input type="number" name="quantity[]" class="form-control" value="1" min="1"></div>
+            <div class="col-md-3"><button type="button" class="btn btn-danger remove-product">Remove</button></div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mb-2" id="addProductBtn">Add Product</button>
+        <div class="mb-3"><label>Status</label>
+          <select name="status" class="form-select">
+            <option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer"><button type="submit" name="add_order" class="btn btn-primary">Add Order</button></div>
+    </form>
+  </div>
+</div>
+
+<!-- Edit Order Modal -->
+<div class="modal fade" id="editOrderModal" tabindex="-1">
+  <div class="modal-dialog">
+    <form method="POST" class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Edit Order</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <input type="hidden" name="order_id" id="editOrderId">
+        <label>Status</label>
+        <select name="status" id="editStatus" class="form-select">
+          <option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option>
+        </select>
+      </div>
+      <div class="modal-footer"><button type="submit" name="edit_order" class="btn btn-primary">Update</button></div>
+    </form>
+  </div>
+</div>
