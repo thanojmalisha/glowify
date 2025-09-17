@@ -1,0 +1,71 @@
+
+    :root{
+      --primary:#ff4da6;
+      --secondary:#6a5acd;
+      --dark:#0f1720;
+      --light:#ffffff;
+      --gradient:linear-gradient(135deg,#6a5acd,#ff4da6);
+    }
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#fdfbff;
+      color:#333;
+      overflow-x:hidden;
+    }
+    /* Navbar */
+    .navbar{background:var(--gradient);}
+    .navbar-brand{color:#fff !important;font-weight:800;}
+    .nav-link{color:#fff !important;}
+    .nav-link:hover{color:#ffea00 !important;}
+
+    /* Hero */
+    .contact-hero{
+      background:url("../images/background.jpg") center/cover no-repeat;
+      color:#fff;height:55vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;position:relative;
+    }
+    .contact-hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55);}
+    .contact-hero .hero-content{position:relative;z-index:1;}
+    .contact-hero h1{
+      font-size:3rem;font-weight:800;
+      background:var(--gradient);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* Contact Section */
+    .contact-section{padding:80px 20px;}
+    .contact-box{
+      background:#fff;border-radius:20px;padding:30px;
+      box-shadow:0 6px 20px rgba(0,0,0,.1);transition:.3s;
+    }
+    .contact-box:hover{transform:translateY(-6px);}
+    .contact-option{
+      display:flex;align-items:center;margin-bottom:20px;
+      padding:15px;border-radius:15px;background:#fafafa;
+      transition:.3s;
+    }
+    .contact-option i{
+      font-size:1.8rem;margin-right:15px;color:var(--secondary);
+    }
+    .contact-option:hover{background:#f0f0ff;}
+
+    /* Contact Form */
+    .contact-form input,.contact-form textarea{
+      border-radius:15px;border:1px solid #ddd;
+      padding:14px;font-size:1rem;width:100%;
+      margin-bottom:15px;
+    }
+    .contact-form button{
+      background:var(--gradient);color:#fff;
+      padding:14px 28px;border:none;
+      border-radius:30px;font-weight:600;transition:.3s;
+    }
+    .contact-form button:hover{background:#ffea00;color:#000;}
+
+    /* Footer */
+    footer{background:#0f1720;color:#fff;padding:60px 20px;}
+    footer h5{font-weight:700;}
+    footer a{color:#ccc;text-decoration:none;display:block;margin-bottom:8px;}
+    footer a:hover{color:#ffea00;}
