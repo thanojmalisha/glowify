@@ -1,0 +1,15 @@
+body {background:#0f1720;color:#e6eef8;}
+.card {background:#1e1e2f;color:#e6eef8;border-radius:12px;}
+.sidebar {
+  width:220px;height:100vh;position:fixed;top:0;left:0;background:#1e1e2f;padding:20px;color:#fff;
+}
+
+.sidebar h4 {color:#ff69b4;margin-bottom:20px;}
+.sidebar a {display:block;padding:10px;margin:5px 0;color:#fff;text-decoration:none;border-radius:6px;}
+.sidebar a:hover {background:#4f46e5;}
+.main {margin-left:240px;padding:20px;}
+
+.table-hover tbody tr:hover{background:rgba(79,70,229,0.2);}
+.btn {border-radius:6px;}
+.modal-content {border-radius:18px;background:#1e1e2f;color:#fff;}
+.modal-header {background:linear-gradient(135deg,#4f46e5,#ff69b4);color:#fff;border:none;}
